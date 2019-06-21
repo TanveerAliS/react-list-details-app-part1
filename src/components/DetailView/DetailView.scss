@@ -1,0 +1,159 @@
+$wrapperColor: #FFE82F;
+$black: black;
+
+@keyframes bounceIn-fromTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-2000px);
+	}
+	60% {
+		opacity: 1;
+		transform: translateY(30px);
+	}
+	80% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes upDown {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	50% {
+		transform: translate(0px, -20px);
+	}
+	100% {
+		transform: translate(0px, 20px);
+	}
+}
+
+@keyframes rotateWordsFirst {
+	0% {
+		opacity: 1;
+		animation-timing-function: ease-in;
+		height: 0px;
+	}
+	8% {
+		opacity: 1;
+		height: 60px;
+	}
+	19% {
+		opacity: 1;
+		height: 60px;
+	}
+	25% {
+		opacity: 0;
+		height: 60px;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+h4 {
+	margin-bottom: 10px;
+	margin-top: 0px;
+}
+
+.details-card-wrapper {
+    color: $black;
+    margin: 0 auto;
+    width: 26rem;
+    
+    .details-card {
+        background-color: #FFE82F;
+        border-radius: 5px;
+        padding: 40px;
+        box-shadow: 6px 6px 0px 0px rgba(50, 50, 50, 0.75);
+        overflow: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
+    }
+
+    .img-wrapper {
+        float: left;
+        display: inline-block;
+        a {
+            display: block;
+            width: 80%;
+        }
+    }
+
+    .details-pic {
+        border-radius: 100%;
+        transition: border-color .8s ease-in-out;
+        margin: 0 auto;
+        max-width: 160px;
+        &:hover {
+            animation: upDown 3s infinite;
+        }
+    }
+
+    .text-wrapper {
+        margin-top: 2rem;
+
+        .details-info {
+            margin-top: 2rem;
+            overflow: hidden;
+            width: 10rem;
+            margin: 0 auto;
+            ul {
+                li {
+                    margin-bottom: 6px;
+                }
+            }
+
+            .attributes {
+                font-size: 14px;
+                float: left;
+                font-weight: 700;
+                width: 75%;
+                text-align: left;
+            }
+    
+            .values {
+                font-size: 14px;
+                float: left;
+                width: 25%;
+                text-align: left;
+            }
+        }
+
+        .status {
+            margin: 30px 0;
+        }
+
+        .status-text {
+            text-align: center;
+            font-weight: 400;
+            font-size: 15px;
+            display: inline;
+            height: 50px;
+            overflow: hidden;
+            span {
+                position: absolute;
+                opacity: 0;
+                overflow: hidden;
+                animation: rotateWordsFirst 18s ease infinite 1s;
+                width: 17rem;
+                &:nth-child(2) {
+                    animation-delay: 6s;
+                }
+                &:nth-child(3) {
+                    animation-delay: 12s;
+                }
+            }
+        }
+    }   
+}
